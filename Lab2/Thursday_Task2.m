@@ -1,0 +1,16 @@
+A = 1;
+T = 1;
+t1=-2:0.01:2;
+t2=-2:0.01:2;
+g1 = rect(t1,A,T,0);
+g2 = rect(t2,A,T,0);
+g =fftshift(fft(g1));
+[a, b] = cart2pol(real(g),imag(g));
+subplot(2,2,1);plot(t1,a);subplot(2,2,2);plot(t1,b);
+g3 = conv(g1,g2);
+g3 = g3/100;
+t3 = t1(1)+t1(1):0.01:t1(end) + t2(end); 
+plot(t3,g3);
+z = (1/100)*fftshift(fft(g3));
+[c, d] = cart2pol(real(z),imag(z));
+subplot(2,2,3);plot(t3,d);subplot(2,2,4);plot(t3,c);
