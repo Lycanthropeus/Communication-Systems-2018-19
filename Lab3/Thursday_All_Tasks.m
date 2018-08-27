@@ -21,10 +21,9 @@ fs = 40000;
 y = ammod(m1,fc,fs,0,Ac);
 subplot(1,4,3);plot(t,y);
 
-%% TASK - III (Amplitude Modulation using 'modulate')
+%% TASK - III (Amplitude Modulation using 'modulate') ....still incomplete!!....
 
 fs = 400000;
 fc = 100000;
 m4 = cos(2*pi*1000*t);
 z = modulate(m4,fc,fs,'am');
-subplot(1,4,4);plot(t,z);
